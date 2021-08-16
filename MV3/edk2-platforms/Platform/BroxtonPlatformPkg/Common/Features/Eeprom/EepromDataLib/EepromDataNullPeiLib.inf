@@ -1,0 +1,46 @@
+## @file
+#  Library producing EEPROM raw data functionality.
+#
+#  Copyright (c) 2015 - 2018, Intel Corporation. All rights reserved.<BR>
+#
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution. The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php.
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010017
+  BASE_NAME                      = EepromDataNullPeiLib
+  FILE_GUID                      = F4A687F7-BC3C-4BFB-AB8E-EA6599B2F62F
+  VERSION_STRING                 = 1.0
+  MODULE_TYPE                    = BASE
+  LIBRARY_CLASS                  = EepromDataNullPeiLib
+  CONSTRUCTOR                    = EepromDataNullInitConstructor
+
+[Depex]
+  TRUE
+
+[Guids]
+  gEepromVariableGuid
+
+[LibraryClasses]
+  BaseLib
+  DebugLib
+
+[Packages]
+  MdePkg/MdePkg.dec
+  BroxtonPlatformPkg/PlatformPkg.dec
+
+[Sources]
+  EepromDataLib.c
+  EepromDataLib.h
+  EepromDataNullLibConstructor.c
+  MemoryAllocationPei.c
+  Null/EepromDataNullLib.c
+  Null/EepromDataNullLib.h
+

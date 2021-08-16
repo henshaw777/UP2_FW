@@ -1,0 +1,32 @@
+## @file
+#  Component information file for the ACPI tables.
+#
+#  Copyright (c) 1999 - 2018, Intel Corporation. All rights reserved.<BR>
+#
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution. The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php.
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+##
+
+[defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = AcpiTableDmar
+  FILE_GUID                      = 6767ABFE-27D2-41B3-A084-B8A89824D35A
+  MODULE_TYPE                    = USER_DEFINED
+  VERSION_STRING                 = 1.0
+  EDK_RELEASE_VERSION            = 0x00020000
+  EFI_SPECIFICATION_VERSION      = 0x00020000
+
+[sources.common]
+  Dmar.aslc
+  Dmar.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  BroxtonPlatformPkg/PlatformPkg.dec
+  BroxtonSiPkg/BroxtonSiPkg.dec
