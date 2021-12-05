@@ -50,8 +50,12 @@ resetVector:
 ;
 ; This is where the processor will begin execution
 ;
-    nop
-    nop
+; EDIT:LEE: changing this to "xcgh ax,cx" (running it twice will be a nop). This is just a quick way to verify I am running MY FW.
+;   I should see 0x91, 0x91
+;    nop
+;    nop
+    xchg ax,cx
+    xchg ax,cx
     jmp     short EarlyBspInitReal16
 ALIGN   16
 
