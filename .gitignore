@@ -1,2 +1,19 @@
-MV3/Build
-MV3/Conf
+MV3/Build/
+MV3/Conf/
+
+MV3/edk2/BaseTools/
+MV3/edk2-platforms/Platform/BroxtonPlatformPkg/Common/Tools/
+
+MV3/edk2-platforms/Silicon/BroxtonSoc/BroxtonFspPkg/ApolloLakeFspBinPkg/FspBin/*.Fv
+MV3/edk2-platforms/Silicon/BroxtonSoc/BroxtonFspPkg/ApolloLakeFspBinPkg/FspBin/ApolloLakeFsp.fd
+
+MV3/EDK2.log
+
+
+
+#
+# Untracked using update-index
+# See https://www.karltarvas.com/2020/07/02/git-keep-file-but-ignore-changes.html to re-track.
+#
+MV3/edk2-platforms/Platform/BroxtonPlatformPkg/DefineAtBuildMacros.dsc
+ResetVector.ia32.port80.raw
