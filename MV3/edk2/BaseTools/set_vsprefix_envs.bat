@@ -90,6 +90,8 @@ if defined VS140COMNTOOLS (
   )
 )
 
+@REM Skip over this. Not needed. Just make sure to run build in the proper VS command prompt.
+goto skip
 @REM set VS2017
 if not defined VS150COMNTOOLS (
   if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
@@ -104,6 +106,7 @@ if not defined VS150COMNTOOLS (
     goto SetWinDDK
   )
 )
+:skip
 
 if defined VCToolsInstallDir (
   if not defined VS2017_PREFIX (
