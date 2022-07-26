@@ -8,6 +8,9 @@ set BuildFlags=
 
 set thisscript=%0
 
+:: Make sure Python 2 is default.
+set PATH=C:\Python27;%PATH%
+
 :: Optional arguments
 :OptLoop
 
