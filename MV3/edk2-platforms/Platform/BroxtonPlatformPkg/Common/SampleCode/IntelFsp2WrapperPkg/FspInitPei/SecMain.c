@@ -79,6 +79,9 @@ SecStartup (
   UINT32                      Index;
   UINT32                      PeiStackSize;
 
+  //ERROR_HERE
+  DEBUG((DEBUG_INFO, "ENTERLEE_BBB\n"));
+
   PeiStackSize = PcdGet32 (PcdPeiTemporaryRamStackSize);
   if (PeiStackSize == 0) {
     PeiStackSize = (SizeOfRam >> 1);

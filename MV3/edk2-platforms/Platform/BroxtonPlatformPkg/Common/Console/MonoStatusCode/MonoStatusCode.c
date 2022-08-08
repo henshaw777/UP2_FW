@@ -118,6 +118,7 @@ InitializeMonoStatusCode (
   ASSERT_EFI_ERROR (Status);
 
   DEBUG ((DEBUG_INFO, "\nMono Status Code PEIM Loaded\n"));
+  DEBUG((DEBUG_INFO, "==>\t~~~ ! MSR(0xc80) == 0x%p\n", AsmReadMsr64(0xC80)));
 
   return ;
 }

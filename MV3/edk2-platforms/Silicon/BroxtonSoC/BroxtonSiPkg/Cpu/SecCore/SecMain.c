@@ -76,6 +76,20 @@ SecStartup (
   UINT32                      Index;
   UINT32                      PeiStackSize;
 
+  //ANOTHER_AAAAAAAAAAAAAA
+  DEBUG((DEBUG_INFO, "ENTERLEE_AAA\n"));
+  CHAR8* x = "ENTERLEE_CCCC";
+  x[0] = 'E';
+
+  for (int i = 0; i < sizeof(x); ++i)
+  {
+      if (x[i] == (CHAR8)SizeOfRam)
+      {
+          CpuDeadLoop();
+      }
+  }
+
+
   //
   // Report Status Code to indicate entering SEC core
   //

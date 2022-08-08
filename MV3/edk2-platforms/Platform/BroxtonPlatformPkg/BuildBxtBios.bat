@@ -489,6 +489,8 @@ echo PLATFORM_NAME is %PLATFORM_NAME%
 echo Invoking normal EDK2 build... with the following: 
 echo call build %Build_Flags%
 pause
+::set Build_Flags=%Build_Flags%  -m SampleCode/IntelFsp2WrapperPkg/FspmWrapperPeim/FspmWrapperPeim.inf
+::call build %Build_Flags%
 call build %Build_Flags%
 if ErrorLevel 1 goto BldFail
 

@@ -139,6 +139,12 @@ CallFspMemoryInit (
     return EFI_DEVICE_ERROR;
   }
 
+  DEBUG((DEBUG_INFO, "==>\t~~~ Found FspHeader: 0x%p\n", FspHeader));
+  DEBUG((DEBUG_INFO, "==>\t~~~ DebugPrint is at 0x%p\n", DebugPrint));
+  DEBUG((DEBUG_INFO, "==>\t~~~ ! MSR(0xc80) == 0x%p\n", AsmReadMsr64(0xC80) ));
+  DEBUG((DEBUG_INFO, "==>\t~~~ Entering DeadLoop...\n"));
+  CpuDeadLoop();
+
   FspMemoryInitApi = (FSP_MEMORY_INIT)((UINTN)FspHeader->ImageBase + (UINTN)FspHeader->FspMemoryInitEntryOffset);
   InterruptState = SaveAndDisableInterrupts ();
   Status = Execute32BitCode ((UINTN) FspMemoryInitApi, (UINTN) FspmUpdDataPtr, (UINTN) HobListPtr);
