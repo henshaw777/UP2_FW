@@ -219,7 +219,44 @@ Up2UpdateFspmUpd (
     FspUpdRgn->FspmConfig.Ch3_DeviceWidth       = 0x01; // x16
     FspUpdRgn->FspmConfig.Ch3_DramDensity       = 0x02; // 8Gb
     FspUpdRgn->FspmConfig.Ch3_Option            = 0x03;
+
+  } else if (DdrId == 0x03) { // 8GB, Actually Micron memory.
+
+    //
+    // EDIT:LEE: Not sure why the original comments mention it supporting Micron,
+    //  because the older UP2 boards use Samsung memory. 
+    // It's likely that other, original code is janky.
+    //
+    // This option is to support newer boards with 8GB LPDDR4: Micron.MT53D512M32D2DS-053  
+    // See https://up-board.org/pcn-up-squared-dram-emmc-bios/ for more information
+    //
+
+    FspUpdRgn->FspmConfig.DualRankSupportEnable = 0;
+
+    FspUpdRgn->FspmConfig.Ch0_RankEnable        = 0x01; // [0]: Rank 0 [1]: Rank 1
+    FspUpdRgn->FspmConfig.Ch0_DeviceWidth       = 0x01; // x16
+    FspUpdRgn->FspmConfig.Ch0_DramDensity       = 0x04; // 16Gb
+    FspUpdRgn->FspmConfig.Ch0_Option            = 0x03;
+
+    FspUpdRgn->FspmConfig.Ch1_RankEnable        = 0x01; // [0]: Rank 0 [1]: Rank 1
+    FspUpdRgn->FspmConfig.Ch1_DeviceWidth       = 0x01; // x16
+    FspUpdRgn->FspmConfig.Ch1_DramDensity       = 0x04; // 16Gb
+    FspUpdRgn->FspmConfig.Ch1_Option            = 0x03;
+
+    FspUpdRgn->FspmConfig.Ch2_RankEnable        = 0x01; // [0]: Rank 0 [1]: Rank 1
+    FspUpdRgn->FspmConfig.Ch2_DeviceWidth       = 0x01; // x16
+    FspUpdRgn->FspmConfig.Ch2_DramDensity       = 0x04; // 16Gb
+    FspUpdRgn->FspmConfig.Ch2_Option            = 0x03;
+
+    FspUpdRgn->FspmConfig.Ch3_RankEnable        = 0x01; // [0]: Rank 0 [1]: Rank 1
+    FspUpdRgn->FspmConfig.Ch3_DeviceWidth       = 0x01; // x16
+    FspUpdRgn->FspmConfig.Ch3_DramDensity       = 0x04; // 16Gb
+    FspUpdRgn->FspmConfig.Ch3_Option            = 0x03;
+
+
+
   }
+  
 
   //
   // Swizzling
